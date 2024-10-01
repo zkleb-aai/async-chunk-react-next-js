@@ -4,7 +4,7 @@ This web application, built with Next.js and React, provides near-realtime speec
 
 ## Features
 
-- Async chunkings audio recording and chunking in the browser
+- Async chunking audio recording and chunking in the browser
 - Asynchronous transcription using AssemblyAI API
 - Ordered transcript display in real-time
 - Configurable chunk size
