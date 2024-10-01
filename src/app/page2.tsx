@@ -12,7 +12,7 @@ export default function Home() {
   const [isRecording, setIsRecording] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [chunkSize, setChunkSize] = useState(15);
-  const overlap = 0; // Locked at 0
+  const [overlap, setOverlap] = useState(0);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
@@ -146,12 +146,12 @@ export default function Home() {
           <input
             type="number"
             value={overlap}
-            disabled
-            className="ml-2 p-1 border rounded bg-gray-100"
+            onChange={(e) => setOverlap(Number(e.target.value))}
+            className="ml-2 p-1 border rounded"
           />
         </label>
         <p className="text-sm text-gray-600">
-          Overlap functionality is currently not available. It may be implemented in future versions to ensure that there is no chance any context is lost between chunks.
+          The overlap input indicates how many seconds before the end of the last chunk the new chunk begins
         </p>
       </div>
       <button
